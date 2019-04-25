@@ -1,0 +1,27 @@
+plugins {
+	id 'application'
+	id 'java'
+}
+
+application {
+	mainClassName = 'edu.kafka.streamsapi.StreamsAPIApplication'
+}
+
+group = 'edu.kafka'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 11
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testImplementation 'org.apache.kafka:kafka-streams-test-utils:2.2.0'
+	implementation 'org.apache.kafka:kafka-streams:2.2.0'
+
+	implementation 'org.slf4j:slf4j-simple:1.7.26'
+	implementation 'org.projectlombok:lombok:1.18.4'
+	annotationProcessor 'org.projectlombok:lombok:1.18.4'
+
+	testImplementation 'junit:junit:4.12'
+}
