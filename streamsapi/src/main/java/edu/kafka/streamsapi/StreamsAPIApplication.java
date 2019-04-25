@@ -41,12 +41,15 @@ public class StreamsAPIApplication {
 	}
 
 	static void setupStreaming(StreamsBuilder builder){
+
+//	    // Case 1
 //		builder
 //				.<String,String>stream("test-topic")
 //				.filter((key, value) -> !key.equals(value))
 //				.transformValues(MetadataProcessor::new)
 //				.to("test-enriched-topic");
 
+//	    // Case 2
 //		KStream<String,String>[] branches = builder
 //				.<String,String>stream("test-topic")
 //				.branch((key, value) -> !key.equals(value));
@@ -55,6 +58,7 @@ public class StreamsAPIApplication {
 //				.merge(branches[0])
 //				.to("test-enriched-topic");
 
+//	    // Case 3
 //		builder
 //				.<String,String>stream("test-topic")
 //				.groupByKey()
@@ -63,6 +67,7 @@ public class StreamsAPIApplication {
 //				.mapValues(String::valueOf)
 //				.to("test-enriched-topic");
 
+//	    // Case 4
 //		builder
 //				.<String,String>stream("test-topic")
 //				.groupByKey()
@@ -71,6 +76,7 @@ public class StreamsAPIApplication {
 //				.mapValues(String::valueOf)
 //				.to("test-enriched-topic");
 
+//	    // Case 5
 //		KTable<String,String> table = builder
 //				.<String,String>table("test-table-topic");
 //		builder
@@ -78,6 +84,7 @@ public class StreamsAPIApplication {
 //				.leftJoin(table,(leftValue, rightValue)-> leftValue + " " + rightValue)
 //				.to("test-table-topic");
 
+	    // Case 6
 		builder
 				.<String,String>stream("test-topic")
 				.groupByKey()

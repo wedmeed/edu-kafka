@@ -28,6 +28,10 @@ public class StreamsAPIApplicationTests {
 				new TopologyTestDriver(builder.build(), StreamsAPIApplication.config);
 	}
 
+    /**
+     * The test is applicable for Case 5 and Case 6 only!
+     * Disable it if you aren't studying for unit-testing
+     */
 	@Test
 	public void checkSingleKeyAgg() {
 		testDriver.pipeInput(factory.create("test-topic", "testKey", "testValue"));
